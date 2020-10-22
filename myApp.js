@@ -34,9 +34,11 @@ var app = express();
 app.get('/now', (req,res, next)=>{
 	req.time = new Date().toString();
 	next();
-}, (req,res)=>{
-	res.json({time: req.time});
-});
+},
+(req,res) => {
+	res.send({"time": req.time});
+}
+);
 
 /** 9)  Get input from client - Route parameters */
 
@@ -55,7 +57,7 @@ app.get('/now', (req,res, next)=>{
 
 // This would be part of the basic setup of an Express app
 // but to allow FCC to run tests, the server is already active
-/** app.listen(process.env.PORT || 3000 ); */
+//app.listen(process.env.PORT || 80 ); 
 
 //---------- DO NOT EDIT BELOW THIS LINE --------------------
 
